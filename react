@@ -1,0 +1,14 @@
+function useState(initValue) {
+ let state = initValue;
+ function setState(newState) {
+ state = newState;
+ render();
+ }
+ return [state, setState];
+}
+function render() {
+ ReactDOM.render(
+ <App />,
+ document.getElementById('root')
+ );
+}
